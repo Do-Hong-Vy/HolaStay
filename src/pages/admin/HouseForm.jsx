@@ -20,10 +20,12 @@ const HouseForm = () => {
     area: "Tân Xã",
     address: "",
     amenities: "",
-    electricityFee: "",
-    waterFee: "",
-    internetFee: "",
-    cleaningFee: "",
+    serviceCosts: [
+      { name: "Tiền điện", fee: "", unit: "số" },
+      { name: "Tiền nước", fee: "", unit: "người" },
+      { name: "Mạng Internet", fee: "", unit: "phòng" },
+      { name: "Phí vệ sinh, an ninh", fee: "", unit: "người" },
+    ],
     contactPhone: "",
     availableRooms: "",
   });
@@ -45,10 +47,7 @@ const HouseForm = () => {
             area: h.area,
             address: h.address,
             amenities: h.amenities?.join(", ") || "",
-            electricityFee: h.electricityFee || "",
-            waterFee: h.waterFee || "",
-            internetFee: h.internetFee || "",
-            cleaningFee: h.cleaningFee || "",
+            serviceCosts: h.serviceCosts || [],
             contactPhone: h.contactPhone || "",
             availableRooms: h.availableRooms || "",
           });
@@ -122,6 +121,24 @@ const HouseForm = () => {
     setForm({ ...form, images: newImages.length > 0 ? newImages : [""] });
   };
 
+  const handleServiceChange = (index, field, value) => {
+    const newServices = [...form.serviceCosts];
+    newServices[index][field] = value;
+    setForm({ ...form, serviceCosts: newServices });
+  };
+
+  const handleAddService = () => {
+    setForm({
+      ...form,
+      serviceCosts: [...form.serviceCosts, { name: "", fee: "", unit: "" }],
+    });
+  };
+
+  const handleRemoveService = (index) => {
+    const newServices = form.serviceCosts.filter((_, i) => i !== index);
+    setForm({ ...form, serviceCosts: newServices });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitError("");
@@ -143,10 +160,13 @@ const HouseForm = () => {
         .split(",")
         .map((a) => a.trim())
         .filter(Boolean),
-      electricityFee: Number(form.electricityFee) || 0,
-      waterFee: Number(form.waterFee) || 0,
-      internetFee: Number(form.internetFee) || 0,
-      cleaningFee: Number(form.cleaningFee) || 0,
+      serviceCosts: form.serviceCosts
+        .filter((s) => s.name.trim() !== "")
+        .map((s) => ({
+          name: s.name.trim(),
+          fee: Number(s.fee) || 0,
+          unit: s.unit.trim(),
+        })),
       images: form.images.filter((img) => img.trim() !== ""),
       image: form.images.find((img) => img.trim() !== "") || "",
     };
@@ -374,70 +394,65 @@ const HouseForm = () => {
             </div>
           </div>
 
-          <div className="form-row">
-            <div className="form-group">
-              <label>Giá điện</label>
-              <div className="input-group">
+          <div className="form-group" style={{ gridColumn: "1 / -1" }}>
+            <label>Chi phí dịch vụ</label>
+            {form.serviceCosts.map((service, index) => (
+              <div
+                key={index}
+                style={{
+                  display: "flex",
+                  gap: "12px",
+                  marginBottom: "12px",
+                  alignItems: "center",
+                }}
+              >
                 <input
                   className="input-modern"
-                  name="electricityFee"
-                  type="number"
-                  min="0"
-                  value={form.electricityFee}
-                  onChange={handleChange}
-                  placeholder="VD: 3800"
+                  placeholder="Tên dịch vụ (VD: Tiền điện)"
+                  value={service.name}
+                  onChange={(e) =>
+                    handleServiceChange(index, "name", e.target.value)
+                  }
+                  style={{ flex: 1 }}
                 />
-                <span className="input-group-addon">đ / số</span>
-              </div>
-            </div>
-            <div className="form-group">
-              <label>Giá nước</label>
-              <div className="input-group">
                 <input
                   className="input-modern"
-                  name="waterFee"
                   type="number"
                   min="0"
-                  value={form.waterFee}
-                  onChange={handleChange}
-                  placeholder="VD: 80000"
+                  placeholder="Giá tiền"
+                  value={service.fee}
+                  onChange={(e) =>
+                    handleServiceChange(index, "fee", e.target.value)
+                  }
+                  style={{ width: "120px" }}
                 />
-                <span className="input-group-addon">đ / người</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="form-row">
-            <div className="form-group">
-              <label>Phí mạng Internet</label>
-              <div className="input-group">
                 <input
                   className="input-modern"
-                  name="internetFee"
-                  type="number"
-                  min="0"
-                  value={form.internetFee}
-                  onChange={handleChange}
-                  placeholder="VD: 100000"
+                  placeholder="Đơn vị (VD: số)"
+                  value={service.unit}
+                  onChange={(e) =>
+                    handleServiceChange(index, "unit", e.target.value)
+                  }
+                  style={{ width: "120px" }}
                 />
-                <span className="input-group-addon">đ / phòng</span>
+                <button
+                  type="button"
+                  className="btn-danger"
+                  style={{ padding: "8px 12px" }}
+                  onClick={() => handleRemoveService(index)}
+                >
+                  <LuTrash2 size={16} />
+                </button>
               </div>
-            </div>
-            <div className="form-group">
-              <label>Phí vệ sinh, an ninh</label>
-              <div className="input-group">
-                <input
-                  className="input-modern"
-                  name="cleaningFee"
-                  type="number"
-                  min="0"
-                  value={form.cleaningFee}
-                  onChange={handleChange}
-                  placeholder="VD: 50000"
-                />
-                <span className="input-group-addon">đ / người</span>
-              </div>
-            </div>
+            ))}
+            <button
+              type="button"
+              className="btn-outline-modern"
+              onClick={handleAddService}
+              style={{ width: "fit-content", marginTop: "4px" }}
+            >
+              <LuPlus size={16} /> Thêm dịch vụ
+            </button>
           </div>
 
           <div className="form-group">

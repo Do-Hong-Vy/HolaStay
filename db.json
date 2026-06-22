@@ -15,12 +15,30 @@
         "Chỗ để xe"
       ],
       "address": "Xóm 3, Xã Tân Xã, Huyện Thạch Thất",
-      "electricityFee": 4000,
-      "waterFee": 80000,
-      "internetFee": 100000,
-      "cleaningFee": 40000,
       "contactPhone": "0981.222.333 (Cô Mai)",
-      "availableRooms": 2
+      "availableRooms": 2,
+      "serviceCosts": [
+        {
+          "name": "Tiền điện",
+          "fee": 4000,
+          "unit": "số"
+        },
+        {
+          "name": "Tiền nước",
+          "fee": 80000,
+          "unit": "người"
+        },
+        {
+          "name": "Mạng Internet",
+          "fee": 100000,
+          "unit": "phòng"
+        },
+        {
+          "name": "Phí vệ sinh, an ninh",
+          "fee": 40000,
+          "unit": "người"
+        }
+      ]
     },
     {
       "name": "KTX Xanh Hòa Lạc",
@@ -41,14 +59,32 @@
         "Nấu ăn",
         "Giặt giũ"
       ],
-      "electricityFee": 3500,
-      "waterFee": 100000,
-      "internetFee": 0,
-      "cleaningFee": 50000,
       "contactPhone": "0904.555.666 (Quản lý KTX)",
       "availableRooms": 5,
       "image": "/img/house2.jpg",
-      "id": "2"
+      "id": "2",
+      "serviceCosts": [
+        {
+          "name": "Tiền điện",
+          "fee": 3500,
+          "unit": "số"
+        },
+        {
+          "name": "Tiền nước",
+          "fee": 100000,
+          "unit": "người"
+        },
+        {
+          "name": "Mạng Internet",
+          "fee": 0,
+          "unit": "phòng"
+        },
+        {
+          "name": "Phí vệ sinh, an ninh",
+          "fee": 50000,
+          "unit": "người"
+        }
+      ]
     },
     {
       "id": "3",
@@ -64,12 +100,30 @@
         "Nấu ăn"
       ],
       "address": "Ngõ 15, Xóm 5, Xã Tân Xã, Huyện Thạch Thất",
-      "electricityFee": 4500,
-      "waterFee": 70000,
-      "internetFee": 80000,
-      "cleaningFee": 30000,
       "contactPhone": "0977.888.999 (Chú Bình)",
-      "availableRooms": 1
+      "availableRooms": 1,
+      "serviceCosts": [
+        {
+          "name": "Tiền điện",
+          "fee": 4500,
+          "unit": "số"
+        },
+        {
+          "name": "Tiền nước",
+          "fee": 70000,
+          "unit": "người"
+        },
+        {
+          "name": "Mạng Internet",
+          "fee": 80000,
+          "unit": "phòng"
+        },
+        {
+          "name": "Phí vệ sinh, an ninh",
+          "fee": 30000,
+          "unit": "người"
+        }
+      ]
     },
     {
       "id": "4",
@@ -87,12 +141,30 @@
         "Wifi miễn phí"
       ],
       "address": "Thôn Cánh Chủ, Xã Bình Yên, Huyện Thạch Thất",
-      "electricityFee": 3800,
-      "waterFee": 100000,
-      "internetFee": 0,
-      "cleaningFee": 100000,
       "contactPhone": "0912.345.678 (Chị Lan)",
-      "availableRooms": 3
+      "availableRooms": 3,
+      "serviceCosts": [
+        {
+          "name": "Tiền điện",
+          "fee": 3800,
+          "unit": "số"
+        },
+        {
+          "name": "Tiền nước",
+          "fee": 100000,
+          "unit": "người"
+        },
+        {
+          "name": "Mạng Internet",
+          "fee": 0,
+          "unit": "phòng"
+        },
+        {
+          "name": "Phí vệ sinh, an ninh",
+          "fee": 100000,
+          "unit": "người"
+        }
+      ]
     },
     {
       "id": "5",
@@ -109,12 +181,30 @@
         "Nấu ăn"
       ],
       "address": "Số 12, Thôn Phú Hữu, Xã Tân Xã, Huyện Thạch Thất",
-      "electricityFee": 4000,
-      "waterFee": 80000,
-      "internetFee": 100000,
-      "cleaningFee": 50000,
       "contactPhone": "0989.111.222 (Bác Hùng)",
-      "availableRooms": 0
+      "availableRooms": 0,
+      "serviceCosts": [
+        {
+          "name": "Tiền điện",
+          "fee": 4000,
+          "unit": "số"
+        },
+        {
+          "name": "Tiền nước",
+          "fee": 80000,
+          "unit": "người"
+        },
+        {
+          "name": "Mạng Internet",
+          "fee": 100000,
+          "unit": "phòng"
+        },
+        {
+          "name": "Phí vệ sinh, an ninh",
+          "fee": 50000,
+          "unit": "người"
+        }
+      ]
     },
     {
       "id": "6",
@@ -133,12 +223,30 @@
         "Ban công"
       ],
       "address": "Đường nội bộ Khu CNC Hòa Lạc, Thạch Thất",
-      "electricityFee": 3500,
-      "waterFee": 120000,
-      "internetFee": 150000,
-      "cleaningFee": 80000,
       "contactPhone": "0888.999.000 (Anh Tuấn)",
-      "availableRooms": 4
+      "availableRooms": 4,
+      "serviceCosts": [
+        {
+          "name": "Tiền điện",
+          "fee": 3500,
+          "unit": "số"
+        },
+        {
+          "name": "Tiền nước",
+          "fee": 120000,
+          "unit": "người"
+        },
+        {
+          "name": "Mạng Internet",
+          "fee": 150000,
+          "unit": "phòng"
+        },
+        {
+          "name": "Phí vệ sinh, an ninh",
+          "fee": 80000,
+          "unit": "người"
+        }
+      ]
     },
     {
       "id": "7",
@@ -155,12 +263,30 @@
         "Bảo vệ 24/7"
       ],
       "address": "Khu TĐC Thạch Hòa, Xã Thạch Hòa, Huyện Thạch Thất",
-      "electricityFee": 4000,
-      "waterFee": 90000,
-      "internetFee": 100000,
-      "cleaningFee": 50000,
       "contactPhone": "0966.777.888 (Cô Thảo)",
-      "availableRooms": 8
+      "availableRooms": 8,
+      "serviceCosts": [
+        {
+          "name": "Tiền điện",
+          "fee": 4000,
+          "unit": "số"
+        },
+        {
+          "name": "Tiền nước",
+          "fee": 90000,
+          "unit": "người"
+        },
+        {
+          "name": "Mạng Internet",
+          "fee": 100000,
+          "unit": "phòng"
+        },
+        {
+          "name": "Phí vệ sinh, an ninh",
+          "fee": 50000,
+          "unit": "người"
+        }
+      ]
     },
     {
       "id": "8",
@@ -178,12 +304,30 @@
         "Chỗ để xe"
       ],
       "address": "Đối diện cổng trường FPT, Khu CNC Hòa Lạc",
-      "electricityFee": 4000,
-      "waterFee": 80000,
-      "internetFee": 100000,
-      "cleaningFee": 50000,
       "contactPhone": "0933.444.555 (Chú Dũng)",
-      "availableRooms": 2
+      "availableRooms": 2,
+      "serviceCosts": [
+        {
+          "name": "Tiền điện",
+          "fee": 4000,
+          "unit": "số"
+        },
+        {
+          "name": "Tiền nước",
+          "fee": 80000,
+          "unit": "người"
+        },
+        {
+          "name": "Mạng Internet",
+          "fee": 100000,
+          "unit": "phòng"
+        },
+        {
+          "name": "Phí vệ sinh, an ninh",
+          "fee": 50000,
+          "unit": "người"
+        }
+      ]
     }
   ],
   "reviews": [

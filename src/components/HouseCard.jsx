@@ -74,22 +74,6 @@ const HouseCard = ({ house }) => {
                 {formatPrice(house.currentPrice)}
               </span>
             </div>
-            {house.price && (
-              <>
-                <span
-                  style={{
-                    color: "var(--text-muted)",
-                    fontSize: "0.8rem",
-                    margin: "0 4px",
-                  }}
-                >
-                  ·
-                </span>
-                <span className="price-deposit">
-                  Cọc {formatPrice(house.price)}
-                </span>
-              </>
-            )}
           </div>
         </div>
       </div>
