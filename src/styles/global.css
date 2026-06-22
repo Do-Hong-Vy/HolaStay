@@ -1,1 +1,368 @@
-/* Global styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+/* ============================================
+   HolaStay Design System — Light & Dark Mode
+   ============================================ */
+:root {
+  --font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Blue palette */
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+
+  /* Light mode */
+  --bg: #ffffff;
+  --bg-soft: #fcfcfd;
+  --bg-muted: #f1f5f9;
+  --surface: #ffffff;
+  --surface-variant: #f1f5f9;
+  --text: #1e293b;
+  --text-sub: #475569;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  
+  /* Primary Accent: Bold Blue (for buttons and strong highlights) */
+  --accent: #2563eb;       /* Blue 600 */
+  --accent-hover: #1d4ed8; /* Blue 700 */
+  --accent-bg: #eff6ff;    /* Blue 50 */
+
+  /* Mature Semantic Palette (Professional & Grounded) */
+  --color-price: #10b981;       /* Emerald 500 (Money) */
+  --color-price-bg: #d1fae5;    
+  
+  --color-location: #3b82f6;    /* Blue 500 (Location) */
+  --color-location-bg: #dbeafe; 
+  
+  --color-utility: #0ea5e9;     /* Sky 500 (Water/Internet) */
+  --color-utility-bg: #e0f2fe;  
+
+  --color-electric: #f59e0b;    /* Amber 500 (Electricity) */
+  --color-electric-bg: #fef3c7;
+
+  --color-generic: #64748b;     /* Slate 500 (Generic/Rooms/Security) */
+  --color-generic-bg: #f1f5f9;
+
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --success: #10b981;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-lg: 16px;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --bg-soft: #121212;
+  --bg-muted: #262626;
+  --surface: #121212;
+  --surface-variant: #262626;
+  --text: #ffffff;
+  --text-sub: #e5e5e5;
+  --text-muted: #a3a3a3;
+  --border: #262626;
+  
+  --accent: #3b82f6;       /* Blue 500 */
+  --accent-hover: #2563eb; /* Blue 600 */
+  --accent-bg: rgba(59, 130, 246, 0.15);
+
+  --color-price: #34d399;       /* Emerald 400 */
+  --color-price-bg: rgba(16, 185, 129, 0.15);
+  
+  --color-location: #60a5fa;    /* Blue 400 */
+  --color-location-bg: rgba(59, 130, 246, 0.15);
+  
+  --color-utility: #38bdf8;     /* Sky 400 */
+  --color-utility-bg: rgba(14, 165, 233, 0.15);
+
+  --color-electric: #fbbf24;    /* Amber 400 */
+  --color-electric-bg: rgba(245, 158, 11, 0.15);
+
+  --color-generic: #94a3b8;     /* Slate 400 */
+  --color-generic-bg: rgba(100, 116, 139, 0.15);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
+
+  color-scheme: dark;
+}
+
+/* === Reset === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+button {
+  font-family: var(--font);
+}
+
+/* === Layout === */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === Card === */
+.modern-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.modern-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* === Badge === */
+.modern-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-radius: 6px;
+  border: none;
+  cursor: default;
+  transition: 0.15s;
+}
+.modern-badge:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.modern-badge.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* === Buttons === */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-danger {
+  padding: 7px 16px;
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.btn-danger:hover {
+  opacity: 0.9;
+}
+
+/* Keep old class aliases */
+.btn-primary-modern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-primary-modern:hover {
+  background: var(--accent-hover);
+}
+.btn-outline-modern {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-outline-modern:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-danger-modern {
+  padding: 7px 16px;
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.btn-danger-modern:hover {
+  opacity: 0.9;
+}
+
+/* === Inputs === */
+.input-modern {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-soft);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  outline: none;
+  transition: 0.2s;
+}
+.input-modern:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+.input-modern::placeholder {
+  color: var(--text-muted);
+}
+
+.select-modern {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-soft);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font);
+  font-size: 0.88rem;
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s;
+  appearance: auto;
+}
+.select-modern:focus {
+  border-color: var(--accent);
+}
+
+.textarea-modern {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-soft);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  resize: none;
+  outline: none;
+  transition: 0.2s;
+}
+.textarea-modern:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+/* === Bubble Review === */
+.bubble-review {
+  background: var(--bg-muted);
+  color: var(--text);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border-top-left-radius: 2px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 10px;
+}

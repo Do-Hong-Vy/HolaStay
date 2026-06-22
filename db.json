@@ -1,3 +1,239 @@
 {
-  "houses": []
+  "houses": [
+    {
+      "id": "1",
+      "name": "Nhà Trọ Hoa Mai",
+      "image": "/img/house1.jpg",
+      "description": "Phòng trọ khép kín, sạch sẽ, thoáng mát nằm ngay gần cổng trường FPT. Có ban công rộng rãi, view cánh đồng cực chill. Chủ nhà thân thiện, giờ giấc thoải mái cho sinh viên.",
+      "price": 500000,
+      "currentPrice": 1800000,
+      "area": "Tân Xã",
+      "amenities": [
+        "Khép kín",
+        "Điều hòa",
+        "Nóng lạnh",
+        "Chỗ để xe"
+      ],
+      "address": "Xóm 3, Xã Tân Xã, Huyện Thạch Thất",
+      "electricityFee": 4000,
+      "waterFee": 80000,
+      "internetFee": 100000,
+      "cleaningFee": 40000,
+      "contactPhone": "0981.222.333 (Cô Mai)",
+      "availableRooms": 2
+    },
+    {
+      "name": "KTX Xanh Hòa Lạc",
+      "description": "Ký túc xá tư nhân tiêu chuẩn cao cấp dành riêng cho sinh viên. Có sân chung rộng, khu giặt đồ, bếp chung sạch sẽ. Wifi tốc độ cao miễn phí.",
+      "images": [
+        "/img/house2.jpg",
+        "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/623425918_1459281185801992_6169208081313087764_n.jpg?stp=dst-jpg_tt6&cstp=mx1538x2048&ctp=s1538x2048&_nc_cat=101&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeEgR7_9aoIB1pvK4VNySvYKOzATXM5x7BM7MBNcznHsE5KapBc-WmjJPWUPMCIL0UQVruxlJ-GmpY2HHYASm8KG&_nc_ohc=_57hSL_aiiQQ7kNvwHyjFbY&_nc_oc=Ado7M_0O5KLAeme7EHYJIFO4EX9vO88NvoDGBxer1-R8Td8coj9UxeIhWHfyLl0xh5Y&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=2GlbXBPHYYkixSDe_JzLAQ&_nc_ss=7a2a8&oh=00_Af_O5a3BKZE0E3GIb33vYorwCOcamGXREx7PgTR0VW30UA&oe=6A3E9411",
+        "https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/556683804_25575695265352235_7504918911829206718_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s2048x1536&_nc_cat=101&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeGO4ET-5UjvYgqqq4CBqwb-GZX4DXcI1poZlfgNdwjWmrL4w0HJVgSqzuBeAP-nL4eHBFGfkNSaqgWA3ba-jGBp&_nc_ohc=gKhun_q4ZG4Q7kNvwHZwSRU&_nc_oc=AdqZ3TOm0XBlVAepHoUflOOZifQxWz-ZWOh9T5V5bMsvS6LyQ2pG6WmM7Rordz0kTf8&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=zSlnDI4mVi-M1CA9XbTKSQ&_nc_ss=7a2a8&oh=00_Af_HgpLdyA22EZ_XW8FGlYdcIz0DG4i3Nm_QgpYxj-fFyQ&oe=6A3E7D04",
+        "https://scontent.fhan15-2.fna.fbcdn.net/v/t39.30808-6/556601422_25575695635352198_5326553610321999886_n.jpg?stp=dst-jpg_tt6&cstp=mx1286x965&ctp=s1286x965&_nc_cat=100&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeEUwk-i06QCI1viYETq7H5k6yVAUIHlGM7rJUBQgeUYzke9dfoJXxjqA6L-AMqEQtokiersZQ6gV9dmTzGNLzWK&_nc_ohc=D5d87CKJtvYQ7kNvwHAnepg&_nc_oc=AdrQplhf84WTSmEzVhpw0GhUa6bEbZE588QDvY091sHrR534tmHzeuKSqclByZ5MtWA&_nc_zt=23&_nc_ht=scontent.fhan15-2.fna&_nc_gid=AROUkB2ZMwqtKPdNoEJOpA&_nc_ss=7a2a8&oh=00_Af9yF4MGaLIfgGtsyqmhHceNmHjv1hGe9hezHlW5Emmb1g&oe=6A3E883E"
+      ],
+      "price": 300000,
+      "currentPrice": 1200000,
+      "area": "Thạch Hòa",
+      "address": "Thôn 8, Xã Thạch Hòa, Huyện Thạch Thất",
+      "amenities": [
+        "Wifi miễn phí",
+        "Chỗ để xe",
+        "Nấu ăn",
+        "Giặt giũ"
+      ],
+      "electricityFee": 3500,
+      "waterFee": 100000,
+      "internetFee": 0,
+      "cleaningFee": 50000,
+      "contactPhone": "0904.555.666 (Quản lý KTX)",
+      "availableRooms": 5,
+      "image": "/img/house2.jpg",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "name": "Phòng Trọ Thanh Bình",
+      "image": "/img/house3.jpg",
+      "description": "Phòng trọ giá rẻ dành cho sinh viên tiết kiệm. Diện tích 18m², có gác xép rộng rãi. Gần chợ Tân Xã, tiện mua đồ ăn, sinh hoạt hàng ngày.",
+      "price": 200000,
+      "currentPrice": 900000,
+      "area": "Tân Xã",
+      "amenities": [
+        "Gác xép",
+        "Chỗ để xe",
+        "Nấu ăn"
+      ],
+      "address": "Ngõ 15, Xóm 5, Xã Tân Xã, Huyện Thạch Thất",
+      "electricityFee": 4500,
+      "waterFee": 70000,
+      "internetFee": 80000,
+      "cleaningFee": 30000,
+      "contactPhone": "0977.888.999 (Chú Bình)",
+      "availableRooms": 1
+    },
+    {
+      "id": "4",
+      "name": "HomeStay Đồi Thông",
+      "image": "/img/house4.jpg",
+      "description": "Homestay view đồi thông cực đẹp, không gian yên tĩnh lý tưởng cho sinh viên cần tập trung học bài. Phòng rộng 25m², nội thất đầy đủ, ban công riêng biệt.",
+      "price": 800000,
+      "currentPrice": 2500000,
+      "area": "Bình Yên",
+      "amenities": [
+        "Khép kín",
+        "Điều hòa",
+        "Nóng lạnh",
+        "Ban công",
+        "Wifi miễn phí"
+      ],
+      "address": "Thôn Cánh Chủ, Xã Bình Yên, Huyện Thạch Thất",
+      "electricityFee": 3800,
+      "waterFee": 100000,
+      "internetFee": 0,
+      "cleaningFee": 100000,
+      "contactPhone": "0912.345.678 (Chị Lan)",
+      "availableRooms": 3
+    },
+    {
+      "id": "5",
+      "name": "Nhà Trọ Bác Hùng",
+      "image": "/img/house5.jpg",
+      "description": "Nhà trọ uy tín nhất khu vực Phú Hữu, được sinh viên FPT tin tưởng nhiều năm. Chủ nhà coi sinh viên như con cháu trong nhà, hỗ trợ sửa chữa nhanh chóng.",
+      "price": 400000,
+      "currentPrice": 1500000,
+      "area": "Phú Hữu",
+      "amenities": [
+        "Khép kín",
+        "Nóng lạnh",
+        "Chỗ để xe",
+        "Nấu ăn"
+      ],
+      "address": "Số 12, Thôn Phú Hữu, Xã Tân Xã, Huyện Thạch Thất",
+      "electricityFee": 4000,
+      "waterFee": 80000,
+      "internetFee": 100000,
+      "cleaningFee": 50000,
+      "contactPhone": "0989.111.222 (Bác Hùng)",
+      "availableRooms": 0
+    },
+    {
+      "id": "6",
+      "name": "Studio Chill Hòa Lạc",
+      "image": "/img/house6.jpg",
+      "description": "Căn hộ studio thiết kế hiện đại kiểu Hàn Quốc, phù hợp cho bạn nào thích sống một mình. Full nội thất cao cấp: giường, tủ, bàn học, máy giặt riêng.",
+      "price": 1000000,
+      "currentPrice": 3200000,
+      "area": "Hòa Lạc",
+      "amenities": [
+        "Khép kín",
+        "Điều hòa",
+        "Nóng lạnh",
+        "Máy giặt",
+        "Wifi miễn phí",
+        "Ban công"
+      ],
+      "address": "Đường nội bộ Khu CNC Hòa Lạc, Thạch Thất",
+      "electricityFee": 3500,
+      "waterFee": 120000,
+      "internetFee": 150000,
+      "cleaningFee": 80000,
+      "contactPhone": "0888.999.000 (Anh Tuấn)",
+      "availableRooms": 4
+    },
+    {
+      "id": "7",
+      "name": "Trọ Sinh Viên Thảo Nguyên",
+      "image": "/img/house7.jpg",
+      "description": "Khu trọ sinh viên quy mô lớn với 30 phòng, có sân chơi cầu lông, phòng gym mini miễn phí. Bảo vệ 24/7, camera an ninh khắp nơi.",
+      "price": 350000,
+      "currentPrice": 1400000,
+      "area": "Thạch Hòa",
+      "amenities": [
+        "Khép kín",
+        "Chỗ để xe",
+        "Wifi miễn phí",
+        "Bảo vệ 24/7"
+      ],
+      "address": "Khu TĐC Thạch Hòa, Xã Thạch Hòa, Huyện Thạch Thất",
+      "electricityFee": 4000,
+      "waterFee": 90000,
+      "internetFee": 100000,
+      "cleaningFee": 50000,
+      "contactPhone": "0966.777.888 (Cô Thảo)",
+      "availableRooms": 8
+    },
+    {
+      "id": "8",
+      "name": "Căn Hộ Mini FPT Gate",
+      "image": "/img/house8.jpg",
+      "description": "Ngay cổng trường FPT, đi bộ 2 phút là tới lớp. Phòng đẹp, sạch sẽ, có chỗ phơi đồ riêng. Khu vực xung quanh nhiều quán ăn, tiện lợi.",
+      "price": 600000,
+      "currentPrice": 2000000,
+      "area": "Hòa Lạc",
+      "amenities": [
+        "Khép kín",
+        "Điều hòa",
+        "Nóng lạnh",
+        "Nấu ăn",
+        "Chỗ để xe"
+      ],
+      "address": "Đối diện cổng trường FPT, Khu CNC Hòa Lạc",
+      "electricityFee": 4000,
+      "waterFee": 80000,
+      "internetFee": 100000,
+      "cleaningFee": 50000,
+      "contactPhone": "0933.444.555 (Chú Dũng)",
+      "availableRooms": 2
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "houseId": "1",
+      "studentName": "Nguyễn Văn An",
+      "rating": 5,
+      "comment": "Phòng sạch sẽ, chủ nhà dễ tính. Ở đây 2 năm rồi chưa muốn chuyển đi đâu cả. Wifi mạnh, code bài tập nhóm thoải mái!",
+      "date": "2026-03-15"
+    },
+    {
+      "id": "2",
+      "houseId": "1",
+      "studentName": "Trần Thị Bình",
+      "rating": 4,
+      "comment": "Phòng ổn, gần trường. Chỉ hơi thiếu chỗ phơi đồ thôi, còn lại ok hết.",
+      "date": "2026-03-10"
+    },
+    {
+      "id": "3",
+      "houseId": "2",
+      "studentName": "Lê Minh Cường",
+      "rating": 4,
+      "comment": "KTX sạch đẹp, có khu giặt đồ tiện lắm. Nhưng đôi khi hơi ồn vào cuối tuần.",
+      "date": "2026-02-28"
+    },
+    {
+      "id": "4",
+      "houseId": "3",
+      "studentName": "Phạm Thu Dung",
+      "rating": 5,
+      "comment": "Giá siêu rẻ mà phòng vẫn ổn. Gần chợ nên mua đồ ăn tiện cực kỳ. Sinh viên tiết kiệm nên ở đây!",
+      "date": "2026-04-01"
+    },
+    {
+      "id": "5",
+      "houseId": "4",
+      "studentName": "Hoàng Anh Em",
+      "rating": 5,
+      "comment": "View đồi thông đẹp xỉu, sáng ra ngồi ban công uống cà phê học bài thì tuyệt vời luôn. Worth every penny!",
+      "date": "2026-04-05"
+    },
+    {
+      "id": "6",
+      "houseId": "5",
+      "studentName": "Vũ Thị Giang",
+      "rating": 4,
+      "comment": "Bác Hùng dễ tính lắm, hỏng gì là sửa liền. Phòng sạch sẽ, an ninh tốt. Recommend cho các bạn K20!",
+      "date": "2026-03-20"
+    }
+  ]
 }
