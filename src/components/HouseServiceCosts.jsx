@@ -1,4 +1,4 @@
-import { LuZap, LuDroplet, LuWifi, LuShield, LuCar, LuShirt, LuCheckCircle } from "react-icons/lu";
+import { LuZap, LuDroplet, LuWifi, LuShield, LuCar, LuShirt, LuCheck } from "react-icons/lu";
 import { renderServiceFee } from "../utils/formatters";
 
 const HouseServiceCosts = ({ house }) => {
@@ -17,7 +17,7 @@ const HouseServiceCosts = ({ house }) => {
     if (lowerName.includes("vệ sinh") || lowerName.includes("an ninh") || lowerName.includes("rác")) return { Icon: LuShield, className: "icon-generic" };
     if (lowerName.includes("xe")) return { Icon: LuCar, className: "icon-generic" };
     if (lowerName.includes("giặt")) return { Icon: LuShirt, className: "icon-utility" };
-    return { Icon: LuCheckCircle, className: "icon-generic" };
+    return { Icon: LuCheck, className: "icon-generic" };
   };
 
   return (

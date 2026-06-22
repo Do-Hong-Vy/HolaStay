@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addHouse, updateHouse } from "../../redux/houseSlice";
-import { LuArrowLeft, LuTrash2, LuPlus, LuSave } from "react-icons/lu";
+import { LuArrowLeft, LuSave } from "react-icons/lu";
 import { houseService } from "../../services/houseService";
+import HouseGeneralInput from "../../components/admin/HouseGeneralInput";
+import HouseServicesInput from "../../components/admin/HouseServicesInput";
+import HouseMediaInput from "../../components/admin/HouseMediaInput";
 
 const HouseForm = () => {
   const { id } = useParams();
@@ -228,247 +231,27 @@ const HouseForm = () => {
             </div>
           )}
 
-          <div className="form-group">
-            <label>Tên nhà trọ</label>
-            <input
-              className={`input-modern ${errors.name ? "input-error" : ""}`}
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="VD: Nhà Trọ Hoa Mai"
-            />
-            {errors.name && <span className="field-error">{errors.name}</span>}
-          </div>
+          <HouseGeneralInput
+            form={form}
+            handleChange={handleChange}
+            errors={errors}
+          />
 
-          <div className="form-row">
-            <div className="form-group">
-              <label>Tiền cọc (VNĐ)</label>
-              <input
-                className={`input-modern ${errors.price ? "input-error" : ""}`}
-                name="price"
-                type="number"
-                min="0"
-                value={form.price}
-                onChange={handleChange}
-                placeholder="500000"
-              />
-              {errors.price && (
-                <span className="field-error">{errors.price}</span>
-              )}
-            </div>
-            <div className="form-group">
-              <label>Giá thuê / tháng (VNĐ)</label>
-              <input
-                className={`input-modern ${errors.currentPrice ? "input-error" : ""}`}
-                name="currentPrice"
-                type="number"
-                min="0"
-                value={form.currentPrice}
-                onChange={handleChange}
-                placeholder="1800000"
-              />
-              {errors.currentPrice && (
-                <span className="field-error">{errors.currentPrice}</span>
-              )}
-            </div>
-          </div>
+          <HouseServicesInput
+            serviceCosts={form.serviceCosts}
+            handleServiceChange={handleServiceChange}
+            handleAddService={handleAddService}
+            handleRemoveService={handleRemoveService}
+          />
 
-          <div className="form-row">
-            <div className="form-group">
-              <label>Khu vực</label>
-              <select
-                className="select-modern"
-                name="area"
-                value={form.area}
-                onChange={handleChange}
-              >
-                <option>Hòa Lạc</option>
-                <option>Tân Xã</option>
-                <option>Thạch Hòa</option>
-                <option>Bình Yên</option>
-                <option>Phú Hữu</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label>Địa chỉ</label>
-              <input
-                className={`input-modern ${errors.address ? "input-error" : ""}`}
-                name="address"
-                value={form.address}
-                onChange={handleChange}
-                placeholder="Xóm 3, Tân Xã, Thạch Thất"
-              />
-              {errors.address && (
-                <span className="field-error">{errors.address}</span>
-              )}
-            </div>
-          </div>
-
-          <div className="form-group">
-            <label>Link ảnh</label>
-            {form.images.map((img, index) => (
-              <div
-                key={index}
-                style={{ display: "flex", gap: "8px", marginBottom: "8px" }}
-              >
-                <input
-                  className={`input-modern ${errors.images ? "input-error" : ""}`}
-                  value={img}
-                  onChange={(e) => handleImageChange(index, e.target.value)}
-                  placeholder="/img/house1.jpg hoặc https://..."
-                  style={{ flex: 1 }}
-                />
-                {form.images.length > 1 && (
-                  <button
-                    type="button"
-                    onClick={() => handleRemoveImage(index)}
-                    className="btn-outline-modern"
-                    style={{
-                      padding: "0 12px",
-                      color: "var(--danger)",
-                      borderColor: "var(--danger)",
-                    }}
-                    title="Xóa ảnh này"
-                  >
-                    <LuTrash2 size={16} />
-                  </button>
-                )}
-              </div>
-            ))}
-            {errors.images && (
-              <div className="field-error" style={{ marginBottom: "8px" }}>
-                {errors.images}
-              </div>
-            )}
-
-            <button
-              type="button"
-              onClick={handleAddImage}
-              className="btn-outline-modern"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px",
-                fontSize: "0.85rem",
-                padding: "6px 12px",
-                marginTop: "4px",
-              }}
-            >
-              <LuPlus size={16} /> Thêm ảnh khác
-            </button>
-          </div>
-
-          <div className="form-group">
-            <label>Tiện ích</label>
-            <input
-              className="input-modern"
-              name="amenities"
-              value={form.amenities}
-              onChange={handleChange}
-              placeholder="Khép kín, Điều hòa, Nóng lạnh"
-            />
-          </div>
-
-          <div className="form-row">
-            <div className="form-group">
-              <label>Số phòng còn lại</label>
-              <input
-                className="input-modern"
-                name="availableRooms"
-                type="number"
-                min="0"
-                value={form.availableRooms}
-                onChange={handleChange}
-                placeholder="VD: 5"
-              />
-            </div>
-            <div className="form-group">
-              <label>Số điện thoại liên hệ</label>
-              <input
-                className="input-modern"
-                name="contactPhone"
-                value={form.contactPhone}
-                onChange={handleChange}
-                placeholder="VD: 0981234567"
-              />
-            </div>
-          </div>
-
-          <div className="form-group" style={{ gridColumn: "1 / -1" }}>
-            <label>Chi phí dịch vụ</label>
-            {form.serviceCosts.map((service, index) => (
-              <div
-                key={index}
-                style={{
-                  display: "flex",
-                  gap: "12px",
-                  marginBottom: "12px",
-                  alignItems: "center",
-                }}
-              >
-                <input
-                  className="input-modern"
-                  placeholder="Tên dịch vụ (VD: Tiền điện)"
-                  value={service.name}
-                  onChange={(e) =>
-                    handleServiceChange(index, "name", e.target.value)
-                  }
-                  style={{ flex: 1 }}
-                />
-                <input
-                  className="input-modern"
-                  type="number"
-                  min="0"
-                  placeholder="Giá tiền"
-                  value={service.fee}
-                  onChange={(e) =>
-                    handleServiceChange(index, "fee", e.target.value)
-                  }
-                  style={{ width: "120px" }}
-                />
-                <input
-                  className="input-modern"
-                  placeholder="Đơn vị (VD: số)"
-                  value={service.unit}
-                  onChange={(e) =>
-                    handleServiceChange(index, "unit", e.target.value)
-                  }
-                  style={{ width: "120px" }}
-                />
-                <button
-                  type="button"
-                  className="btn-danger"
-                  style={{ padding: "8px 12px" }}
-                  onClick={() => handleRemoveService(index)}
-                >
-                  <LuTrash2 size={16} />
-                </button>
-              </div>
-            ))}
-            <button
-              type="button"
-              className="btn-outline-modern"
-              onClick={handleAddService}
-              style={{ width: "fit-content", marginTop: "4px" }}
-            >
-              <LuPlus size={16} /> Thêm dịch vụ
-            </button>
-          </div>
-
-          <div className="form-group">
-            <label>Mô tả</label>
-            <textarea
-              className={`textarea-modern ${errors.description ? "input-error" : ""}`}
-              name="description"
-              rows={4}
-              value={form.description}
-              onChange={handleChange}
-              placeholder="Mô tả chi tiết về nhà trọ..."
-            />
-            {errors.description && (
-              <span className="field-error">{errors.description}</span>
-            )}
-          </div>
+          <HouseMediaInput
+            form={form}
+            errors={errors}
+            handleChange={handleChange}
+            handleImageChange={handleImageChange}
+            handleAddImage={handleAddImage}
+            handleRemoveImage={handleRemoveImage}
+          />
 
           <div className="form-actions">
             <button type="submit" className="btn-primary-modern">

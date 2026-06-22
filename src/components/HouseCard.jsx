@@ -23,10 +23,21 @@ const HouseCard = ({ house }) => {
         <img src={house.image} alt={house.name} />
 
         {/* Available Rooms Badge (Top Left) */}
-        <div className="house-card-rooms-pill">
-          {house.availableRooms
-            ? `Còn ${house.availableRooms} phòng`
-            : "Còn phòng"}
+        <div
+          className="house-card-rooms-pill"
+          style={
+            house.availableRooms === 0 || house.availableRooms === "0"
+              ? { background: "var(--danger)" }
+              : {}
+          }
+        >
+          {house.availableRooms === undefined ||
+          house.availableRooms === null ||
+          house.availableRooms === ""
+            ? "Đang cập nhật"
+            : house.availableRooms === 0 || house.availableRooms === "0"
+            ? "Hết phòng"
+            : `Còn ${house.availableRooms} phòng`}
         </div>
 
         {/* Heart Icon (Top Right) */}

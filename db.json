@@ -1,22 +1,21 @@
 {
   "houses": [
     {
-      "id": "1",
       "name": "Nhà Trọ Hoa Mai",
-      "image": "/img/house1.jpg",
       "description": "Phòng trọ khép kín, sạch sẽ, thoáng mát nằm ngay gần cổng trường FPT. Có ban công rộng rãi, view cánh đồng cực chill. Chủ nhà thân thiện, giờ giấc thoải mái cho sinh viên.",
+      "images": [
+        "/img/house1.jpg"
+      ],
       "price": 500000,
       "currentPrice": 1800000,
       "area": "Tân Xã",
+      "address": "Xóm 3, Xã Tân Xã, Huyện Thạch Thất",
       "amenities": [
         "Khép kín",
         "Điều hòa",
         "Nóng lạnh",
         "Chỗ để xe"
       ],
-      "address": "Xóm 3, Xã Tân Xã, Huyện Thạch Thất",
-      "contactPhone": "0981.222.333 (Cô Mai)",
-      "availableRooms": 2,
       "serviceCosts": [
         {
           "name": "Tiền điện",
@@ -38,7 +37,11 @@
           "fee": 40000,
           "unit": "người"
         }
-      ]
+      ],
+      "contactPhone": "0981.222.333 (Cô Mai)",
+      "availableRooms": 2,
+      "image": "/img/house1.jpg",
+      "id": "1"
     },
     {
       "name": "KTX Xanh Hòa Lạc",

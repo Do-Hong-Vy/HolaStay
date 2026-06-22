@@ -1,5 +1,5 @@
 export const formatPrice = (price, isDeposit = false) => {
-  if (!price) return "0k";
+  if (!price) return isDeposit ? "Không yêu cầu" : "Đang cập nhật";
   const suffix = isDeposit ? "" : "/tháng";
   if (price >= 1000000) return `${(price / 1000000).toFixed(1)} triệu${suffix}`;
   return `${(price / 1000).toFixed(0)}k${suffix}`;

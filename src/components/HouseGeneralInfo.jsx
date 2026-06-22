@@ -53,9 +53,11 @@ const HouseGeneralInfo = ({ house }) => {
         <div>
           <p className="info-label">Phòng trống</p>
           <p className="info-value">
-            {house.availableRooms
-              ? `${house.availableRooms} phòng`
-              : "Đang cập nhật"}
+            {house.availableRooms === undefined || house.availableRooms === null || house.availableRooms === ""
+              ? "Đang cập nhật"
+              : house.availableRooms === 0 || house.availableRooms === "0"
+                ? <span style={{ color: "var(--danger)", fontWeight: 500 }}>Hết phòng</span>
+                : `${house.availableRooms} phòng`}
           </p>
         </div>
       </div>
